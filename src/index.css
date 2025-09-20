@@ -1,0 +1,294 @@
+@import "tailwindcss";
+
+body {
+  background-color: black;
+}
+
+.message {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 10px;
+  max-width: 70%;
+}
+
+.gpt-message {
+  background-color: #3b82f6; /* blue */
+  color: white;
+  align-self: flex-start;
+}
+
+.user-message {
+  background-color: #6b7280; /* gray */
+  color: white;
+  align-self: flex-end;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+/* Error Banner */
+.error-banner {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  margin: 10px 150px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Input Box Improvements */
+.inputBox {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.inputBox input {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 2px solid transparent !important;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.inputBox input:focus {
+  background: white !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.inputBox input:disabled {
+  background: rgba(200, 200, 200, 0.3) !important;
+  cursor: not-allowed;
+}
+
+.send-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.send-button:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.send-button:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Markdown Formatting Styles */
+.message-content {
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.message-content .message-paragraph {
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+.message-content .message-heading {
+  font-weight: 600;
+  margin: 12px 0 8px 0;
+  color: #ffffff;
+}
+
+.message-content .message-heading:first-child {
+  margin-top: 0;
+}
+
+.message-content .message-list {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+.message-content .message-list-item {
+  margin: 4px 0;
+}
+
+.message-content .message-quote {
+  border-left: 4px solid rgba(255, 255, 255, 0.3);
+  padding-left: 12px;
+  margin: 8px 0;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.message-content .message-link {
+  color: #60a5fa;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.message-content .message-link:hover {
+  color: #93c5fd;
+}
+
+/* Code Block Styling */
+.message-content .code-block {
+  margin: 12px 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.message-content .inline-code {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 14px;
+  color: #f0f0f0;
+}
+
+/* Syntax Highlighter Overrides */
+.message-content pre {
+  margin: 0;
+  padding: 0;
+  background: transparent !important;
+}
+
+.message-content code {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 14px;
+}
+
+/* Loading Animation Improvements */
+.loading-text {
+  color: #3b82f6;
+  margin-top: 15px;
+  font-size: 14px;
+  font-style: italic;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Additional GPT Response Improvements */
+.message-content {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.message-content p {
+  margin-bottom: 12px;
+}
+
+.message-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Better spacing for lists */
+.message-content ul,
+.message-content ol {
+  margin: 12px 0;
+  padding-left: 24px;
+}
+
+.message-content li {
+  margin: 6px 0;
+  line-height: 1.5;
+}
+
+/* Improved blockquote styling */
+.message-content blockquote {
+  border-left: 4px solid #60a5fa;
+  margin: 16px 0;
+  padding: 8px 16px;
+  background: rgba(96, 165, 250, 0.1);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+}
+
+/* Better code styling */
+.message-content pre {
+  background: rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 16px;
+  margin: 12px 0;
+  overflow-x: auto;
+}
+
+.message-content code {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+/* Improved headings */
+.message-content h1,
+.message-content h2,
+.message-content h3,
+.message-content h4,
+.message-content h5,
+.message-content h6 {
+  margin: 16px 0 8px 0;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.message-content h1 { font-size: 18px; }
+.message-content h2 { font-size: 16px; }
+.message-content h3 { font-size: 15px; }
+
+/* Better link styling */
+.message-content a {
+  color: #60a5fa;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.message-content a:hover {
+  color: #93c5fd;
+}
+
+/* Table styling for markdown tables */
+.message-content table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 16px 0;
+}
+
+.message-content th,
+.message-content td {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.message-content th {
+  background: rgba(255, 255, 255, 0.1);
+  font-weight: 600;
+}

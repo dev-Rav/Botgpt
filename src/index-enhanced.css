@@ -1,0 +1,330 @@
+@import "tailwindcss";
+
+body {
+  background-color: black;
+  color: white;
+}
+
+.message {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 10px;
+  max-width: 70%;
+}
+
+.gpt-message {
+  background-color: #3b82f6; /* blue */
+  color: white;
+  align-self: flex-start;
+}
+
+.user-message {
+  background-color: #6b7280; /* gray */
+  color: white;
+  align-self: flex-end;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+/* Enhanced GPT Response Formatting */
+.gpt-message {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.gpt-message::before {
+  content: "🤖";
+  position: absolute;
+  top: -8px;
+  left: 10px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2px 8px;
+  border-radius: 50%;
+  font-size: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.gpt-message p {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 15px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+/* Better spacing and typography */
+.gpt-message {
+  padding: 15px 15px 15px 35px !important;
+  margin: 10px 0 !important;
+}
+
+/* Improved user message styling */
+.user-message {
+  background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.user-message::after {
+  content: "👤";
+  position: absolute;
+  top: -8px;
+  right: 10px;
+  background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+  padding: 2px 8px;
+  border-radius: 50%;
+  font-size: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.user-message {
+  padding: 15px 35px 15px 15px !important;
+  position: relative;
+}
+
+/* Enhanced chat container */
+.screen2 {
+  background: radial-gradient(ellipse at top, rgba(102, 126, 234, 0.1) 0%, transparent 50%);
+}
+
+/* Better scrollbar */
+.screen2::-webkit-scrollbar {
+  width: 6px;
+}
+
+.screen2::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.screen2::-webkit-scrollbar-thumb {
+  background: rgba(102, 126, 234, 0.5);
+  border-radius: 3px;
+}
+
+.screen2::-webkit-scrollbar-thumb:hover {
+  background: rgba(102, 126, 234, 0.7);
+}
+
+/* Fix class name mismatch - add styles for actual classes used in JSX */
+.user {
+  background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2) !important;
+  padding: 15px 35px 15px 15px !important;
+  position: relative !important;
+  border-radius: 10px !important;
+  margin: 10px 0 !important;
+  max-width: 70% !important;
+  align-self: flex-end !important;
+  color: white !important;
+}
+
+.user::after {
+  content: "👤";
+  position: absolute;
+  top: -8px;
+  right: 10px;
+  background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+  padding: 2px 8px;
+  border-radius: 50%;
+  font-size: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.ai {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+  padding: 15px 15px 15px 35px !important;
+  position: relative !important;
+  border-radius: 10px !important;
+  margin: 10px 0 !important;
+  max-width: 70% !important;
+  align-self: flex-start !important;
+  color: white !important;
+}
+
+.ai::before {
+  content: "🤖";
+  position: absolute;
+  top: -8px;
+  left: 10px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2px 8px;
+  border-radius: 50%;
+  font-size: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Fix chat container class name */
+.screen-2 {
+  background: radial-gradient(ellipse at top, rgba(102, 126, 234, 0.1) 0%, transparent 50%) !important;
+  overflow-y: auto !important;
+}
+
+/* Better scrollbar for screen-2 */
+.screen-2::-webkit-scrollbar {
+  width: 8px;
+}
+
+.screen-2::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.screen-2::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.screen-2::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+/* Enhanced navbar styling */
+.nav {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+  height: 64px !important;
+  min-height: 64px !important;
+}
+
+.nav .logo h3 {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Enhanced card styling */
+.card {
+  background: linear-gradient(135deg, #2d2d2d 0%, #404040 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+  transition: all 0.3s ease !important;
+}
+
+.card:hover {
+  background: linear-gradient(135deg, #3d3d3d 0%, #505050 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Enhanced input styling */
+.inputBox {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.input {
+  background: linear-gradient(135deg, #2d2d2d 0%, #404040 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+.input input {
+  color: white !important;
+  background: transparent !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+}
+
+.input input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-size: 16px !important;
+}
+
+.input input:focus {
+  outline: none !important;
+  background: transparent !important;
+}
+
+/* Ensure input text is always visible */
+.input input {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+
+/* Fix for dark backgrounds */
+.input {
+  background: linear-gradient(135deg, #2d2d2d 0%, #404040 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Screen 1 enhancements */
+.screen-1 {
+  background: radial-gradient(ellipse at center, rgba(102, 126, 234, 0.1) 0%, transparent 70%) !important;
+}
+
+.screen-1 h3 {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Full page layout fixes */
+.h-screen {
+  height: 100vh !important;
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+/* Ensure no scrollbars on main container */
+body {
+  overflow: hidden !important;
+}
+
+/* Better responsive cards */
+.card {
+  min-height: 120px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+/* Enhanced input styling for new layout */
+.inputBox {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  flex-shrink: 0 !important;
+}
+
+.input {
+  background: linear-gradient(135deg, #2d2d2d 0%, #404040 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+.input input {
+  color: white !important;
+}
+
+.input input::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Message container improvements */
+.user, .ai {
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+/* Ensure proper spacing in chat */
+.ai p, .user p {
+  margin: 0 !important;
+}
