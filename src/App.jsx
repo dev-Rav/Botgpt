@@ -46,10 +46,10 @@ const App = () => {
   }
 
   return (
-    <div className="h-screen flex flex-col">
+    <div className="min-h-[100dvh] flex flex-col">
       <Navbar />
 
-      <div className="flex-1 flex flex-col overflow-hidden">
+      <div className="flex-1 flex flex-col ">
         {
           screen === 1 ?
             <div className="flex-1 px-4 sm:px-6 md:px-10 py-8 flex items-center justify-center flex-col overflow-y-auto">
@@ -85,7 +85,7 @@ const App = () => {
                 </div>
               </div>
             </div> : <>
-              <div className="flex-1 px-4 sm:px-6 md:px-10 py-4 overflow-y-auto">
+              <div className="flex-1 px-4 sm:px-6 md:px-10 py-4 overflow-y-auto pb-28">
                 <div className="max-w-4xl mx-auto">
                   {
                     data ? data.map((item, index) => {
@@ -97,7 +97,7 @@ const App = () => {
                                 <p className='text-xs text-gray-400 mb-1'>User</p>
                                 <p className="text-sm">{item.content}</p>
                               </div> :
-                              <div className="ai w-fit max-w-[50%] sm:max-w-[70%] md:max-w-[60%] mb-4 mr-auto p-4">
+                              <div className="ai w-fit max-w-[95%] sm:max-w-[70%] md:max-w-[60%] mb-4 mr-auto p-3 rounded-lg bg-zinc-800">
                                 <p className='text-xs text-gray-400 mb-1'>BotGPT</p>
                                 <div className="text-sm">
                                   <Markdown>
@@ -120,7 +120,7 @@ const App = () => {
         }
       </div>
 
-      <div className="inputBox px-4 sm:px-6  py-3 border-t border-gray-700 bg-zinc-900">
+      <div className="inputBox fixed bottom-0 left-0 right-0 px-3 sm:px-6 py-3 border-t border-gray-700 bg-zinc-900 z-50">
         <div className="input w-full max-w-4xl mx-auto flex items-center gap-2 bg-zinc-800 rounded-xl px-2 py-1">
           <input
             onKeyDown={(e) => {
@@ -132,12 +132,12 @@ const App = () => {
             value={prompt}
             type="text"
             placeholder='Enter your prompt!'
-            className='flex-1 bg-transparent rounded-lg px-4 py-3 outline-none text-white text-base font-normal placeholder-gray-400'
+            className='flex-1 bg-transparent px-3 py-2 outline-none text-white text-sm sm:text-base'
           />
           <button
           onClick={getResponse}
           disabled ={loading}
-          className='bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm disabled:opacity-45'
+          className='bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-white text-sm disabled:opacity-50'
           >Send</button>
         </div>
         <p className='text-xs text-gray-500 text-center mt-2'>BotGPT can make mistakes! cross check it.</p>
